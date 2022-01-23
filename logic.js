@@ -1,7 +1,5 @@
 /** LOGIC TO DETERMINE HOW THE GAME WILL OPERATE */
 
-let player_choice = prompt("Rock, Paper, or Scissors? ")
-
 function computerPlay() {
     let choices = ['Rock','Paper','Scissors'];
     let randomNum = Math.floor(Math.random()*3);
@@ -18,45 +16,79 @@ function gameRound (player, computerPlay) {
 
     if (player.toLowerCase() == 'rock') {
         if (computerPlay.toLowerCase() == 'scissors') {
-            console.log(`You Win! ${player.toUpperCase()} beats ${computerPlay.toUpperCase()}!`)
+            return (`You Win! ${player.toUpperCase()} beats ${computerPlay.toUpperCase()}!`)
     
         } else if (computerPlay.toLowerCase() == 'paper') {
-            console.log(`Aw! You lost, ${computerPlay.toUpperCase()} beats ${player.toUpperCase()}!`)
+            return (`You lose. ${computerPlay.toUpperCase()} beats ${player.toUpperCase()}!`)
             
         } else if (computerPlay.toLowerCase() == 'rock') {
-            console.log('You tied')
+            return ('You tied')
         } else {
-            console.log('What?')
+            return ('What?')
         }
     }
     if (player.toLowerCase() == 'scissors') {
         if (computerPlay.toLowerCase() == 'paper') {
-            console.log(`You Win! ${player.toUpperCase()} beats ${computerPlay.toUpperCase()}`)
+            return (`You Win! ${player.toUpperCase()} beats ${computerPlay.toUpperCase()}`)
     
         } else if (computerPlay.toLowerCase() == 'rock') {
-            console.log(`Aw! You lost, ${computerPlay.toUpperCase()} beats ${player.toUpperCase()}!`)
+            return (`You lose. ${computerPlay.toUpperCase()} beats ${player.toUpperCase()}!`)
             
         } else if (computerPlay.toLowerCase() == 'paper') {
-            console.log('You tied')
+            return ('You tied')
         } else {
-            console.log('What?')
+            return ('What?')
         }
     }
     if (player.toLowerCase() == 'paper') {
         if (computerPlay.toLowerCase() == 'rock') {
-            console.log(`You Win! ${player.toUpperCase()} beats ${computerPlay.toUpperCase()}`)
+            return (`You Win! ${player.toUpperCase()} beats ${computerPlay.toUpperCase()}`)
     
         } else if (computerPlay.toLowerCase() == 'scissors') {
-            console.log(`Aw! You lost, ${computerPlay.toUpperCase()} beats ${player.toUpperCase()}!`)
+            return (`You lose. ${computerPlay.toUpperCase()} beats ${player.toUpperCase()}!`)
             
         } else if (computerPlay.toLowerCase() == 'paper') {
-            console.log('You tied')
+            return ('You tied')
         } else {
-            console.log('What?')
+            return ('What?')
         }
     }
 
 }
 
 
-gameRound(player_choice, computerPlay)
+function game() {
+    
+    player_score = 0
+    computer_score = 0
+
+    let keepGoing = true
+
+    while (keepGoing) {
+
+        let player_choice = prompt("Rock, Paper, or Scissors? ")
+
+        round = gameRound(player_choice, computerPlay)
+        console.log(round)
+
+        if (round[4] == 'W') {
+            player_score += 1
+        } else if (round[4] == 'l') {
+            computer_score += 1
+        } else {}
+
+        console.log(`The score is now:\nPlayer: ${player_score} \nComputer: ${computer_score}`)
+
+        if (player_score == 3) {
+            console.log("Player has Won!")
+            keepGoing = false
+        } else if (computer_score == 3) {
+            console.log("Player has lost!")
+            keepGoing = false
+        }
+
+        }
+    }
+
+
+game()
