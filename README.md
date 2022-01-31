@@ -2,11 +2,17 @@
 
 Start of my Rock Paper Scissors game in the JavaScript console.
 
+Needs Met: 
+Function for Computer to pick random number for choices
+Function for player to choose
+Function to play a round 5 times
+Function to start new game
+
+Things I learned: 
 #learned to link the javascript externally similar to css using src=
 
-Need: 
-function for Computer to pick random number for choices
-function for player to choose
-function to make comparison
-function to declare winnner
-function to start new game
+Update 1/31/22
+
+Needs Met:
+Removed logic to play 5 rounds
+Added buttons and event listeners
