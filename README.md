@@ -16,3 +16,7 @@ Update 1/31/22
 Needs Met:
 Removed logic to play 5 rounds
 Added buttons and event listeners
+Added DIV elements for score and game actions
+
+Things I Learned:
+#how to use event listeners and cycle through multiples
